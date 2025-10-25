@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle, Users, TrendingUp } from "lucide-react";
+import CheckoutDialog from "./CheckoutDialog";
 
 const Hero = () => {
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-b from-background to-secondary/30 overflow-hidden">
       <div className="container mx-auto px-4 py-20">
@@ -26,14 +30,16 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-6 bg-gradient-to-r from-success to-success-glow hover:opacity-90 transition-all shadow-lg hover:shadow-xl"
+                onClick={() => setCheckoutOpen(true)}
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
-                Começar Agora no WhatsApp
+                Garantir Minha Vaga
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 className="text-lg px-8 py-6 border-2"
+                onClick={() => document.getElementById('como-funciona')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Ver Como Funciona
               </Button>
@@ -65,6 +71,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      <CheckoutDialog open={checkoutOpen} onOpenChange={setCheckoutOpen} />
     </section>
   );
 };

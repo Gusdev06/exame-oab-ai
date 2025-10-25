@@ -4,26 +4,26 @@ const steps = [
   {
     icon: MessageCircle,
     number: "01",
-    title: "Conecte no WhatsApp",
-    description: "Clique no botão e inicie sua conversa com o agente de IA. Sem cadastros complicados."
+    title: "Inscreva-se",
+    description: "Clique no botão, preencha seus dados e realize o pagamento de forma segura."
   },
   {
     icon: Brain,
     number: "02",
-    title: "Estude e Pratique",
-    description: "Tire dúvidas, faça simulados e receba explicações detalhadas sobre qualquer tema da OAB."
+    title: "Receba Acesso",
+    description: "Após aprovação do pagamento, você receberá uma mensagem de boas-vindas no seu WhatsApp."
   },
   {
     icon: Trophy,
     number: "03",
-    title: "Seja Aprovado",
-    description: "Acompanhe seu progresso e evolua até conquistar sua aprovação na prova da OAB."
+    title: "Estude e Seja Aprovado",
+    description: "Use o agente de IA 24/7, tire dúvidas, faça simulados e conquiste sua aprovação na OAB."
   }
 ];
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-secondary/30 to-background">
+    <section id="como-funciona" className="py-24 bg-gradient-to-b from-secondary/30 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl font-bold mb-4">

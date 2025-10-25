@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle } from "lucide-react";
+import CheckoutDialog from "./CheckoutDialog";
 
 const CTA = () => {
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+
   return (
     <section className="py-24 bg-gradient-to-br from-primary via-primary-glow to-accent relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzBoNHYyaC00ek0yMCAzMGg0djJoLTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
@@ -20,17 +24,17 @@ const CTA = () => {
             <Button 
               size="lg" 
               className="text-lg px-8 py-6 bg-success hover:bg-success-glow text-success-foreground shadow-2xl hover:shadow-success/50 transition-all hover:scale-105"
+              onClick={() => setCheckoutOpen(true)}
             >
               <MessageCircle className="mr-2 h-5 w-5" />
-              Começar Agora Grátis
+              Garantir Minha Aprovação
             </Button>
-            <p className="text-sm opacity-90">Sem cartão de crédito • Acesso imediato</p>
           </div>
           
           <div className="flex flex-wrap justify-center gap-6 pt-8">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5" />
-              <span>7 dias de garantia</span>
+              <span>Pagamento 100% seguro</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5" />
@@ -38,11 +42,13 @@ const CTA = () => {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5" />
-              <span>Cancele quando quiser</span>
+              <span>Acesso imediato após pagamento</span>
             </div>
           </div>
         </div>
       </div>
+      
+      <CheckoutDialog open={checkoutOpen} onOpenChange={setCheckoutOpen} />
     </section>
   );
 };

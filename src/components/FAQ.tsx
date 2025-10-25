@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: "Tem garantia?",
-    answer: "Sim! Oferecemos garantia de 7 dias. Se não ficar satisfeito, devolvemos 100% do seu investimento, sem perguntas."
+    answer: "Sim! Oferecemos garantia de 7 dias. Se não ficar satisfeito com o produto, devolvemos 100% do seu investimento, sem perguntas."
   }
 ];
 
