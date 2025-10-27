@@ -11,7 +11,7 @@ const testimonials = [
   {
     name: "Rafael Oliveira",
     role: "Aprovado OAB XLII",
-    content: "Poder tirar dúvidas a qualquer hora pelo WhatsApp foi essencial. A IA explica de forma clara e objetiva, melhor que muitos cursinhos.",
+    content: "Ter a possibilidade de tirar dúvidas a qualquer hora pelo WhatsApp foi fundamental. A IA explica de forma clara e direta, muito melhor do que vários cursinhos que já fiz.",
     rating: 5
   },
   {
