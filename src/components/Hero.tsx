@@ -21,7 +21,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Agente de IA treinado com <strong>10 anos de provas da OAB</strong>. 
+              Agente de IA <strong>programado com todas as edições do Exame da OAB</strong>. 
               Estude de forma inteligente, tire dúvidas instantaneamente e simule 
               questões reais direto no seu celular.
             </p>
@@ -49,9 +49,9 @@ const Hero = () => {
               <div className="space-y-1">
                 <div className="flex items-center justify-center gap-2 text-primary font-bold text-2xl">
                   <TrendingUp className="w-6 h-6" />
-                  89%
+                  7x
                 </div>
-                <p className="text-sm text-muted-foreground">Taxa de Aprovação</p>
+                <p className="text-sm text-muted-foreground">Mais produtivo</p>
               </div>
               <div className="space-y-1">
                 <div className="flex items-center justify-center gap-2 text-primary font-bold text-2xl">

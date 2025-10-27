@@ -17,7 +17,7 @@ const testimonials = [
   {
     name: "Juliana Costa",
     role: "Aprovada OAB XXXIX",
-    content: "Os simulados adaptativos focaram exatamente nas minhas dificuldades. Em 2 meses minha nota subiu 40%. Recomendo demais!",
+    content: "Os simulados adaptativos focaram exatamente nas minhas dificuldades. Em 2 meses, minha nota subiu 40%. Recomendo demais!",
     rating: 5
   }
 ];

@@ -8,7 +8,7 @@ import {
 const faqs = [
   {
     question: "Como funciona o agente de IA?",
-    answer: "Nosso agente de IA foi treinado com milhares de questões e conteúdos da OAB dos últimos 10 anos. Ele funciona direto no WhatsApp, respondendo suas dúvidas, gerando simulados personalizados e acompanhando seu progresso em tempo real."
+    answer: "Nosso agente de IA foi treinado com milhares de questões e conteúdos da OAB dos últimos 15 anos. Ele funciona direto no WhatsApp, respondendo suas dúvidas, gerando simulados personalizados e acompanhando seu progresso em tempo real."
   },
   {
     question: "Preciso ter conhecimentos técnicos?",
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "As questões são realmente das provas anteriores?",
-    answer: "Sim! Nossa base de dados inclui questões oficiais da OAB dos últimos 10 anos, além de questões inéditas criadas seguindo o mesmo padrão da banca examinadora."
+    answer: "Sim! Nossa base de dados inclui questões oficiais da OAB dos últimos 15 anos, além de questões inéditas criadas seguindo o mesmo padrão da banca examinadora."
   },
   {
     question: "Posso usar no celular e computador?",
