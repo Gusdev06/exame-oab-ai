@@ -19,8 +19,8 @@ const features = [
   },
   {
     icon: Database,
-    title: "Base Atualizada",
-    description: "Conteúdo sempre atualizado com as últimas mudanças legislativas e jurisprudência."
+    title: "Estudo estratégico",
+    description: "Estude de forma direcionada e eficiente. O agente elimina desperdício de tempo e guia você até a aprovação."
   },
   {
     icon: Clock,
