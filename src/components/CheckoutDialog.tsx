@@ -20,9 +20,8 @@ const checkoutSchema = z.object({
     .max(100, { message: "Nome deve ter no máximo 100 caracteres" }),
   whatsapp: z.string()
     .trim()
-    .regex(/^\+?[1-9]\d{1,14}$/, { message: "WhatsApp inválido. Use formato: +5511999999999" })
-    .min(10, { message: "WhatsApp inválido" })
-    .max(20, { message: "WhatsApp muito longo" })
+    .regex(/^\+55\d{11}$/, { message: "WhatsApp inválido. Digite DDD + número com 9 dígitos" })
+    .length(14, { message: "WhatsApp deve conter DDD + 9 dígitos" })
 });
 
 interface CheckoutDialogProps {
@@ -36,20 +35,52 @@ const CheckoutDialog = ({ open, onOpenChange }: CheckoutDialogProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
+  // Função para formatar o número de WhatsApp
+  const formatWhatsApp = (value: string) => {
+    // Remove tudo que não é número
+    const numbers = value.replace(/\D/g, '');
+    
+    // Limita a 11 dígitos (DDD + número)
+    const limited = numbers.slice(0, 11);
+    
+    // Aplica a máscara baseado no tamanho
+    if (limited.length <= 2) {
+      return limited;
+    } else if (limited.length <= 6) {
+      return `(${limited.slice(0, 2)}) ${limited.slice(2)}`;
+    } else if (limited.length <= 10) {
+      return `(${limited.slice(0, 2)}) ${limited.slice(2, 6)}-${limited.slice(6)}`;
+    } else {
+      return `(${limited.slice(0, 2)}) ${limited.slice(2, 7)}-${limited.slice(7)}`;
+    }
+  };
+
+  // Handler para mudança no campo WhatsApp
+  const handleWhatsAppChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatWhatsApp(e.target.value);
+    setWhatsapp(formatted);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
+      // Remove a formatação para validar apenas os números
+      const cleanWhatsApp = whatsapp.replace(/\D/g, '');
+      
+      // Adiciona o código do país (+55)
+      const fullWhatsApp = `+55${cleanWhatsApp}`;
+      
       // Validar dados
       const validatedData = checkoutSchema.parse({ 
         name: name.trim(), 
-        whatsapp: whatsapp.trim() 
+        whatsapp: fullWhatsApp 
       });
 
       // Aqui você vai colocar a URL do seu checkout
       // Os dados do usuário serão enviados como parâmetros
-      const checkoutUrl = `https://seu-checkout.com?name=${encodeURIComponent(validatedData.name)}&whatsapp=${encodeURIComponent(validatedData.whatsapp)}`;
+      const checkoutUrl = `https://pay.kirvano.com/8eb300e2-6abe-4539-850f-eaff3165d6a8?name=${encodeURIComponent(validatedData.name)}&whatsapp=${encodeURIComponent(validatedData.whatsapp)}`;
       
       // Redirecionar para o checkout
       window.location.href = checkoutUrl;
@@ -103,16 +134,16 @@ const CheckoutDialog = ({ open, onOpenChange }: CheckoutDialogProps) => {
             <Input
               id="whatsapp"
               type="tel"
-              placeholder="+5511999999999"
+              placeholder="(11) 94373-5978"
               value={whatsapp}
-              onChange={(e) => setWhatsapp(e.target.value)}
+              onChange={handleWhatsAppChange}
               required
-              maxLength={20}
+              maxLength={15}
               className="text-base"
             />
-            {/* <p className="text-xs text-muted-foreground">
-              Inclua o código do país e DDD (exemplo: +5511999999999)
-            </p> */}
+            <p className="text-xs text-muted-foreground">
+              Digite apenas os números com DDD
+            </p>
           </div>
           
           <Button 
