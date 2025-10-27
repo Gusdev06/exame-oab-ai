@@ -1,73 +1,102 @@
-# Welcome to your Lovable project
+# OAB IA - Assistente Inteligente para Aprovação na OAB
 
-## Project info
+![OAB IA Logo](public/logo-oab.svg)
 
-**URL**: https://lovable.dev/projects/3bb4e74d-a4be-4d80-9daf-f53e13d0926b
+## 🎯 Sobre o Projeto
 
-## How can I edit this code?
+OAB IA é uma plataforma de estudos inteligente que utiliza Inteligência Artificial para ajudar estudantes a se prepararem para o Exame da Ordem dos Advogados do Brasil (OAB). 
 
-There are several ways of editing your application.
+### Principais Recursos
 
-**Use Lovable**
+- 🤖 **Agente de IA Especializado**: Treinado com todas as edições do Exame da OAB
+- 📱 **Estudos via WhatsApp**: Tire dúvidas e pratique questões direto no seu celular
+- 📊 **Simulados Personalizados**: Questões reais adaptadas ao seu nível
+- 24/7 **Suporte Contínuo**: Disponível a qualquer hora do dia
+- ✅ **Alto Índice de Aprovação**: Mais de 5.000 aprovados em 2024
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3bb4e74d-a4be-4d80-9daf-f53e13d0926b) and start prompting.
+## 🛠️ Tecnologias
 
-Changes made via Lovable will be committed automatically to this repo.
+Este projeto foi construído com:
 
-**Use your preferred IDE**
+- **Vite** - Build tool e dev server
+- **TypeScript** - Tipagem estática
+- **React** - Biblioteca UI
+- **shadcn/ui** - Componentes UI
+- **Tailwind CSS** - Estilização
+- **Lucide React** - Ícones
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Como Executar
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Pré-requisitos
 
-Follow these steps:
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+
+### Instalação
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# 1. Clone o repositório
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Entre no diretório do projeto
+cd exame-oab-ai
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Instale as dependências
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O projeto estará disponível em `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Scripts Disponíveis
 
-**Use GitHub Codespaces**
+```sh
+npm run dev          # Inicia o servidor de desenvolvimento
+npm run build        # Cria a build de produção
+npm run preview      # Preview da build de produção
+npm run lint         # Executa o linter
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📁 Estrutura do Projeto
 
-## What technologies are used for this project?
+```
+exame-oab-ai/
+├── public/          # Arquivos públicos estáticos
+│   └── logo-oab.svg # Logo oficial do projeto
+├── src/
+│   ├── components/  # Componentes React
+│   │   ├── ui/     # Componentes base (shadcn)
+│   │   ├── Hero.tsx
+│   │   ├── Features.tsx
+│   │   ├── HowItWorks.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── FAQ.tsx
+│   │   └── Footer.tsx
+│   ├── pages/      # Páginas da aplicação
+│   ├── hooks/      # Custom hooks
+│   ├── lib/        # Utilitários
+│   └── App.tsx     # Componente principal
+└── index.html      # HTML principal
+```
 
-This project is built with:
+## 🎨 Design e UI
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+O design utiliza:
+- Paleta de cores moderna com gradientes azuis e verdes
+- Componentes reutilizáveis do shadcn/ui
+- Animações suaves e responsivas
+- Layout mobile-first
 
-## How can I deploy this project?
+## 📄 Licença
 
-Simply open [Lovable](https://lovable.dev/projects/3bb4e74d-a4be-4d80-9daf-f53e13d0926b) and click on Share -> Publish.
+© 2025 OAB IA. Todos os direitos reservados.
 
-## Can I connect a custom domain to my Lovable project?
+## 🤝 Contribuindo
 
-Yes, you can!
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Desenvolvido com ❤️ para ajudar futuros advogados

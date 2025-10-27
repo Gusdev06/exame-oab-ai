@@ -110,9 +110,9 @@ const CheckoutDialog = ({ open, onOpenChange }: CheckoutDialogProps) => {
               maxLength={20}
               className="text-base"
             />
-            <p className="text-xs text-muted-foreground">
+            {/* <p className="text-xs text-muted-foreground">
               Inclua o código do país e DDD (exemplo: +5511999999999)
-            </p>
+            </p> */}
           </div>
           
           <Button 
