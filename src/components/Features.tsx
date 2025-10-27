@@ -5,7 +5,7 @@ const features = [
   {
     icon: Brain,
     title: "IA Especializada em OAB",
-    description: "Treinada com milhares de questões dos últimos 15 anos. Entende exatamente o que a banca cobra."
+    description: "Treinada com milhares de questões dos últimos 10 anos. Entende exatamente o que a banca cobra."
   },
   {
     icon: MessageSquare,
