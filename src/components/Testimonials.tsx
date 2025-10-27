@@ -4,20 +4,20 @@ import { Quote, Star } from "lucide-react";
 const testimonials = [
   {
     name: "Ana Paula Santos",
-    role: "Aprovada OAB XXXVIII",
-    content: "Estudei apenas 3 meses usando o agente de IA e passei de primeira! As questões comentadas e as dicas personalizadas fizeram toda diferença.",
+    role: "Aprovada OAB XLI",
+    content: "Usei o agente de IA por apenas 3 meses e passei de primeira! Os comentários detalhados das questões e as dicas personalizadas me ajudaram a estudar de forma muito mais eficiente do que eu imaginava.",
     rating: 5
   },
   {
     name: "Rafael Oliveira",
-    role: "Aprovado OAB XXXVII",
+    role: "Aprovado OAB XLII",
     content: "Poder tirar dúvidas a qualquer hora pelo WhatsApp foi essencial. A IA explica de forma clara e objetiva, melhor que muitos cursinhos.",
     rating: 5
   },
   {
     name: "Juliana Costa",
-    role: "Aprovada OAB XXXIX",
-    content: "Os simulados adaptativos focaram exatamente nas minhas dificuldades. Em 2 meses, minha nota subiu 40%. Recomendo demais!",
+    role: "Aprovada OAB XLIV",
+    content: "Os simulados adaptativos focaram exatamente nas minhas dificuldades. Em 2 meses minha nota subiu 40%. Recomendo demais!",
     rating: 5
   }
 ];
