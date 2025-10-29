@@ -80,7 +80,7 @@ const CheckoutDialog = ({ open, onOpenChange }: CheckoutDialogProps) => {
 
       // Aqui você vai colocar a URL do seu checkout
       // Os dados do usuário serão enviados como parâmetros
-      const checkoutUrl = `https://pay.kirvano.com/8eb300e2-6abe-4539-850f-eaff3165d6a8?name=${encodeURIComponent(validatedData.name)}&whatsapp=${encodeURIComponent(validatedData.whatsapp)}`;
+      const checkoutUrl = `https://pay.kirvano.com/0108b276-b048-4524-91c3-2c8ae9b2dbae?name=${encodeURIComponent(validatedData.name)}&whatsapp=${encodeURIComponent(validatedData.whatsapp)}`;
       
       // Redirecionar para o checkout
       window.location.href = checkoutUrl;
