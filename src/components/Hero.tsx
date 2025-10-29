@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle, Users, TrendingUp } from "lucide-react";
-import CheckoutDialog from "./CheckoutDialog";
 
 const Hero = () => {
-  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const handleGoToCheckout = () => {
+    window.location.href = 'https://pay.kirvano.com/8eb300e2-6abe-4539-850f-eaff3165d6a8';
+  };
 
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-b from-background to-secondary/30 overflow-hidden">
@@ -30,10 +30,10 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-6 bg-gradient-to-r from-success to-success-glow hover:opacity-90 transition-all shadow-lg hover:shadow-xl"
-                onClick={() => setCheckoutOpen(true)}
+                onClick={handleGoToCheckout}
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
-                Garantir Minha Vaga
+                Garantir Minha Aprovação
               </Button>
               <Button 
                 size="lg" 
@@ -71,8 +71,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
-      <CheckoutDialog open={checkoutOpen} onOpenChange={setCheckoutOpen} />
     </section>
   );
 };

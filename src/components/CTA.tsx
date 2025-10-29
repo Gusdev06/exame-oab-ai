@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle } from "lucide-react";
-import CheckoutDialog from "./CheckoutDialog";
 
 const CTA = () => {
-  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const handleGoToCheckout = () => {
+    window.location.href = 'https://pay.kirvano.com/8eb300e2-6abe-4539-850f-eaff3165d6a8';
+  };
 
   return (
     <section className="py-24 bg-gradient-to-br from-primary via-primary-glow to-accent relative overflow-hidden">
@@ -24,7 +24,7 @@ const CTA = () => {
             <Button 
               size="lg" 
               className="text-lg px-8 py-6 bg-success hover:bg-success-glow text-success-foreground shadow-2xl hover:shadow-success/50 transition-all hover:scale-105"
-              onClick={() => setCheckoutOpen(true)}
+              onClick={handleGoToCheckout}
             >
               <MessageCircle className="mr-2 h-5 w-5" />
               Garantir Minha Aprovação
@@ -47,8 +47,6 @@ const CTA = () => {
           </div>
         </div>
       </div>
-      
-      <CheckoutDialog open={checkoutOpen} onOpenChange={setCheckoutOpen} />
     </section>
   );
 };
