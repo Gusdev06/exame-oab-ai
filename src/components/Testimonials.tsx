@@ -5,33 +5,41 @@ const testimonials = [
   {
     name: "Ana Paula Santos",
     role: "Aprovada OAB XLI",
-    content: "Usei o agente de IA por apenas 3 meses e passei de primeira! Os comentários detalhados das questões e as dicas personalizadas me ajudaram a estudar de forma muito mais eficiente do que eu imaginava.",
+    content: "Estudei com a Bia por 3 meses e passei de primeira! Ela me ajudou a entender exatamente onde eu estava errando e o que precisava melhorar. Foi como ter uma mentora sempre comigo.",
     rating: 5
   },
   {
     name: "Rafael Oliveira",
     role: "Aprovado OAB XLII",
-    content: "Ter a possibilidade de tirar dúvidas a qualquer hora pelo WhatsApp foi fundamental. A IA explica de forma clara e direta, muito melhor do que vários cursinhos que já fiz.",
+    content: "A Bia explicava as questões como nenhum cursinho conseguiu. Sempre disponível no WhatsApp, clara e direta. Passei na primeira tentativa graças a ela!",
     rating: 5
   },
   {
     name: "Juliana Costa",
     role: "Aprovada OAB XLIV",
-    content: "Os simulados adaptativos identificaram exatamente minhas dificuldades. Em apenas 2 meses, meus acertos aumentaram em 40%! Recomendo para quem quer resultados de verdade.",
+    content: "Com a Bia, minhas revisões foram certeiras. Ela focava exatamente no que eu precisava estudar. Passei na 1ª tentativa e hoje sou advogada realizada!",
     rating: 5
   }
 ];
 
 const Testimonials = () => {
+  const handleGoToCheckout = () => {
+    window.location.href = 'https://pay.kirvano.com/0108b276-b048-4524-91c3-2c8ae9b2dbae';
+  };
+
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <Star className="w-4 h-4" />
+            Prova Social
+          </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            ⭐ Histórias de Sucesso Reais
+            ⭐ Histórias de Quem Passou na OAB
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-8">
-            Veja o que nossos alunos têm a dizer depois de estudar com o Agente de IA da OAB.
+            Veja o que os alunos têm a dizer depois de conquistar a aprovação.
           </p>
           
           {/* Estatísticas Consolidadas */}
@@ -57,7 +65,11 @@ const Testimonials = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-2 border-gray-200 dark:border-gray-800 hover:border-green-300 dark:hover:border-green-700 transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-900">
+            <Card 
+              key={index} 
+              className="border-2 border-gray-200 dark:border-gray-800 hover:border-green-300 dark:hover:border-green-700 transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-900 animate-fade-in"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
               <CardContent className="p-6 space-y-4">
                 <Quote className="w-10 h-10 text-blue-200 dark:text-blue-800" />
                 
@@ -78,6 +90,19 @@ const Testimonials = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* CTA Prova Social */}
+        <div className="text-center mt-12">
+          <button
+            className="inline-flex items-center justify-center border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium px-8 py-4 text-base lg:text-lg rounded-xl transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
+            onClick={handleGoToCheckout}
+            data-cta="social_primary"
+            data-variant="A"
+            aria-label="Ver mais histórias de quem estudou com a Bia"
+          >
+            🌟 Ver mais histórias de quem estudou com a Bia
+          </button>
         </div>
       </div>
     </section>

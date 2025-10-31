@@ -7,49 +7,53 @@ import {
 
 const faqs = [
   {
-    question: "💬 Como funciona o agente de IA?",
-    answer: "Nosso agente de IA foi treinado com 10 anos de provas da OAB. Ele funciona direto no WhatsApp, respondendo suas dúvidas, gerando simulados personalizados e acompanhando seu progresso em tempo real. É como ter um professor particular disponível 24/7."
+    question: "💬 Como funciona a Bia?",
+    answer: "A Bia é uma mentora inteligente treinada com 10 anos de provas da OAB. Ela funciona direto no WhatsApp, respondendo suas dúvidas, criando simulados personalizados e acompanhando seu progresso em tempo real. É como ter uma professora particular disponível 24/7 que conhece tudo sobre a OAB."
   },
   {
-    question: "❓ E se eu não aprovar mesmo usando a IA?",
-    answer: "Nossa taxa de aprovação é de 89% na 1ª tentativa, mais que o dobro da média nacional. Além disso, oferecemos garantia de 7 dias - se não gostar, devolvemos 100% do seu dinheiro. Mas lembre-se: a IA é uma ferramenta poderosa, mas o seu esforço e dedicação também são fundamentais."
+    question: "📱 Posso falar com a Bia pelo WhatsApp?",
+    answer: "SIM! A Bia está sempre disponível no WhatsApp. Você pode conversar com ela a qualquer hora do dia ou da noite, fazer perguntas, pedir simulados ou tirar dúvidas. É só mandar mensagem e ela responde na hora!"
+  },
+  {
+    question: "❓ E se eu não passar mesmo estudando com a Bia?",
+    answer: "89% dos alunos que estudam com a Bia passam na 1ª tentativa — mais que o dobro da média nacional. Além disso, oferecemos garantia de 7 dias. Se não gostar, devolvemos 100% do seu dinheiro. Mas lembre-se: a Bia é uma ferramenta poderosa, mas seu esforço e dedicação também são fundamentais para a aprovação."
   },
   {
     question: "✅ Posso cancelar quando quiser?",
-    answer: "SIM! Nossa assinatura é mensal e você pode cancelar a qualquer momento, sem burocracia e sem multas. Não há fidelidade nem contratos longos. Você paga apenas enquanto estiver usando."
+    answer: "SIM! A assinatura é mensal e você pode cancelar a qualquer momento, sem burocracia e sem multas. Não há fidelidade nem contratos longos. Você paga apenas enquanto estiver usando a Bia."
   },
   {
     question: "⏱️ Quanto tempo leva para ver resultados?",
-    answer: "A maioria dos nossos alunos relata melhora significativa nos estudos em 7-14 dias. Em 30 dias, muitos aumentam suas notas em até 40%. O tempo exato depende da sua dedicação e frequência de uso."
+    answer: "A maioria dos alunos relata melhora significativa nos estudos em 7-14 dias de uso da Bia. Em 30 dias, muitos aumentam suas notas em até 40%. O tempo exato depende da sua dedicação e de quão frequente você estuda com a Bia."
   },
   {
-    question: "🤔 Preciso ter conhecimentos técnicos?",
-    answer: "Não! É super simples. Basta ter WhatsApp no celular. Você conversa com o agente como se fosse um professor particular, fazendo perguntas e recebendo respostas instantâneas."
+    question: "🤔 Preciso ter conhecimentos técnicos para usar a Bia?",
+    answer: "Não! É super simples. Basta ter WhatsApp no celular. Você conversa com a Bia como se fosse uma amiga ou professora, fazendo perguntas naturalmente e recebendo respostas claras e instantâneas."
   },
   {
-    question: "📚 As questões são realmente das provas anteriores?",
-    answer: "Sim! Nossa base de dados inclui questões oficiais da OAB dos últimos 10 anos, além de questões inéditas criadas seguindo o mesmo padrão da banca examinadora."
-  },
-  {
-    question: "📱 Posso usar no celular e computador?",
-    answer: "Sim! O WhatsApp funciona em qualquer dispositivo. Você pode estudar pelo celular, tablet ou computador, mantendo todo seu histórico sincronizado."
+    question: "📚 A Bia realmente conhece as provas da OAB?",
+    answer: "Sim! A Bia foi treinada com questões oficiais da OAB dos últimos 10 anos. Ela conhece todos os padrões da banca examinadora e sabe exatamente o que mais cai nas provas. É como ter acesso à experiência de milhares de questões aplicadas."
   },
   {
     question: "🛡️ Tem garantia?",
-    answer: "Sim! Oferecemos garantia de 7 dias. Se não ficar satisfeito com o produto, devolvemos 100% do seu investimento, sem perguntas. Você não tem nada a perder."
+    answer: "Sim! Oferecemos garantia incondicional de 7 dias. Se você não gostar da Bia ou achar que ela não é para você, devolvemos 100% do seu investimento, sem perguntas. Você não tem nada a perder."
   }
 ];
 
 const FAQ = () => {
+  const handleGoToCheckout = () => {
+    window.location.href = 'https://pay.kirvano.com/0108b276-b048-4524-91c3-2c8ae9b2dbae';
+  };
+
   return (
     <section className="py-24 bg-gradient-to-b from-background to-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            Perguntas Frequentes
+            ❓ Perguntas Frequentes Sobre a Bia
           </h2>
           <p className="text-xl text-muted-foreground">
-            Tire suas dúvidas sobre o agente de IA
+            Tire suas dúvidas sobre como a Bia pode te ajudar a passar na OAB
           </p>
         </div>
         
@@ -70,6 +74,22 @@ const FAQ = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+
+        {/* CTA FAQ */}
+        <div className="text-center mt-12 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-6">
+            Não encontrou o que procurava? Tire suas dúvidas direto no WhatsApp!
+          </p>
+          <button
+            className="inline-flex items-center justify-center bg-[#00C853] hover:bg-[#00B34A] text-white font-semibold px-8 py-4 text-base lg:text-lg rounded-xl transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00C853] shadow-lg hover:shadow-xl"
+            onClick={handleGoToCheckout}
+            data-cta="faq_primary"
+            data-variant="A"
+            aria-label="Tirar minha dúvida com a Bia"
+          >
+            ❓ Tirar minha dúvida com a Bia
+          </button>
         </div>
       </div>
     </section>

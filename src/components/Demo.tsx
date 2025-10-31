@@ -27,10 +27,10 @@ const Demo = () => {
             Demonstração Ao Vivo
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            🎥 Assista: Sua IA Respondendo em Segundos no WhatsApp
+            🎥 Veja a Bia em Ação no WhatsApp
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400">
-            Veja com seus próprios olhos como o Agente de IA explica conteúdos da OAB em tempo real — direto no seu WhatsApp.
+            Veja com seus próprios olhos como funciona na prática — explicações claras em tempo real, direto no seu WhatsApp.
           </p>
         </div>
 
@@ -124,15 +124,19 @@ const Demo = () => {
           {/* CTA abaixo do vídeo */}
           <div className="text-center mb-16 max-w-2xl mx-auto">
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 font-medium">
-              👇 Gostou? Clique abaixo e comece agora com o mesmo agente!
+              👇 Gostou? Comece agora a estudar de forma inteligente no seu WhatsApp!
             </p>
-            <Button
-              size="lg"
-              className="w-full sm:w-auto text-base lg:text-lg px-10 py-7 bg-[#00C853] hover:bg-[#00B34A] text-white font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
-              onClick={handleGoToCheckout}
-            >
-              Quero Minha IA Agora
-            </Button>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <button
+                className="inline-flex items-center justify-center bg-[#00C853] hover:bg-[#00B34A] text-white font-semibold px-10 py-4 text-base lg:text-lg rounded-xl transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00C853] shadow-xl hover:shadow-2xl w-full sm:w-auto"
+                onClick={handleGoToCheckout}
+                data-cta="video_primary"
+                data-variant="A"
+                aria-label="Ver a Bia em ação"
+              >
+                ▶️ Começar um teste com a Bia
+              </button>
+            </div>
           </div>
 
           {/* Mini Cards de Destaque */}
@@ -154,10 +158,10 @@ const Demo = () => {
                 <MessageCircle className="w-8 h-8 text-blue-600 dark:text-blue-400" />
               </div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-white flex items-center justify-center gap-2">
-                💬 Converse com Linguagem Natural
+                💬 Conversação Natural
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Fale como se estivesse com um amigo — a IA entende e explica fácil.
+                Fale como se estivesse com uma amiga — explicações claras que você realmente entende.
               </p>
             </div>
             
@@ -169,7 +173,7 @@ const Demo = () => {
                 🧠 Simulados Personalizados
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Receba simulados sob medida para seu ritmo e matérias que mais precisa reforçar.
+                Simulados sob medida para seu ritmo e matérias que você mais precisa reforçar.
               </p>
             </div>
           </div>

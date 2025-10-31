@@ -42,15 +42,16 @@ const Comparison = () => {
     <section className="py-24 bg-gray-50 dark:bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <TrendingUp className="w-4 h-4" />
-            Compare e Decida
+          <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <DollarSign className="w-4 h-4" />
+            Economia Inteligente
           </div>
           <h2 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight text-gray-900 dark:text-white">
-            ⚖️ Por Que Alguns Demoram Meses e Outros Passam em Semanas?
+            💰 Você Vai Economizar Muito Mais do Que Imagina
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400">
-            Compare e veja o que muda quando você estuda com o <strong className="text-gray-900 dark:text-white">Agente de IA da OAB</strong>.
+            Veja quanto você economiza comparado a cursinhos tradicionais.<br/>
+            Tudo isso com a ajuda de <strong className="text-gray-900 dark:text-white">uma mentora inteligente disponível 24h</strong>.
           </p>
         </div>
 
@@ -70,9 +71,9 @@ const Comparison = () => {
             <div className="text-center bg-green-50 dark:bg-green-950/20 rounded-t-2xl p-5 border-2 border-green-100 dark:border-green-900/30">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Check className="w-5 h-5 text-green-600 dark:text-green-500" />
-                <p className="text-lg font-bold text-gray-900 dark:text-white">Com OAB IA</p>
+                <p className="text-lg font-bold text-gray-900 dark:text-white">Com a Bia</p>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Inteligência de ponta</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Sua mentora inteligente</p>
             </div>
           </div>
 
@@ -124,11 +125,11 @@ const Comparison = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-400 ml-6">{item.without}</p>
                     </div>
                     
-                    {/* Com IA */}
+                    {/* Com a Bia */}
                     <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-4 border border-green-100 dark:border-green-900/30">
                       <div className="flex items-center gap-2 mb-2">
                         <Check className="w-4 h-4 text-green-600 dark:text-green-500" />
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white">Com OAB IA</p>
+                        <p className="text-sm font-semibold text-gray-900 dark:text-white">Com a Bia</p>
                       </div>
                       <p className="text-sm font-medium text-gray-900 dark:text-white ml-6">{item.with}</p>
                     </div>
@@ -141,22 +142,26 @@ const Comparison = () => {
           {/* Frase Motivacional */}
           <div className="mt-12 lg:mt-16 text-center max-w-3xl mx-auto px-4">
             <p className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3">
-              💬 Agora você já sabe o que te separa da aprovação.
+              💬 Está pronto para transformar seus estudos?
             </p>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-8">
-              Pare de estudar no escuro — comece com a IA que mais aprova no Brasil.
+              Pare de estudar sozinho — tenha uma mentora inteligente rumo à aprovação.
             </p>
             
-            <Button
-              size="lg"
-              className="w-full sm:w-auto text-base lg:text-lg px-8 lg:px-10 py-6 lg:py-7 bg-[#00C853] hover:bg-[#00B34A] text-white font-bold shadow-xl hover:shadow-2xl transition-all animate-pulse"
-              onClick={handleGoToCheckout}
-            >
-              Quero Estudar com o Agente de IA
-            </Button>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <button
+                className="inline-flex items-center justify-center bg-[#00C853] hover:bg-[#00B34A] text-white font-semibold px-8 py-4 text-base lg:text-lg rounded-xl transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00C853] shadow-xl hover:shadow-2xl w-full sm:w-auto"
+                onClick={handleGoToCheckout}
+                data-cta="economy_primary"
+                data-variant="A"
+                aria-label="Ver por que a Bia é mais acessível"
+              >
+                💸 Ver por que a Bia é mais acessível
+              </button>
+            </div>
             
-            <p className="text-xs lg:text-sm text-gray-600 dark:text-gray-400 mt-4 italic">
-              Acesso imediato • Garantia de 7 dias • Tire dúvidas 24h pelo WhatsApp
+            <p className="text-xs lg:text-sm text-gray-600 dark:text-gray-400 mt-4">
+              Acesso imediato • Garantia de 7 dias • Disponível 24h no WhatsApp
             </p>
           </div>
         </div>

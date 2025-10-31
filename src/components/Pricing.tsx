@@ -8,11 +8,11 @@ const Pricing = () => {
   };
 
   const features = [
-    "Acesso ilimitado 24/7 ao agente de IA",
+    "Mentora IA disponível 24/7 no WhatsApp",
     "Simulados personalizados e adaptativos",
-    "Revisões automáticas e mapas mentais",
+    "Revisões automáticas e explicações detalhadas",
     "Base com 10 anos de provas da OAB",
-    "Suporte prioritário no WhatsApp",
+    "Plano de estudos adaptado ao seu ritmo",
     "Garantia de 7 dias • Pagamento 100% seguro"
   ];
 
@@ -20,11 +20,16 @@ const Pricing = () => {
     <section className="py-20 bg-gray-50 dark:bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <MessageCircle className="w-4 h-4" />
+            Plano Mensal
+          </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Menos de R$1 por Dia Para Mudar Sua Carreira
+            💰 Menos de R$1 por Dia Para Mudar Sua Carreira
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400">
-            Investimento inteligente com retorno garantido. Comece hoje mesmo!
+            Acesso completo por apenas <strong className="text-gray-900 dark:text-white">R$19,99/mês</strong>.<br/>
+            Sua mentora inteligente disponível 24h no WhatsApp.
           </p>
         </div>
 
@@ -59,17 +64,19 @@ const Pricing = () => {
                 </ul>
 
                 {/* CTA */}
-                <Button
-                  size="lg"
-                  className="w-full text-lg py-7 bg-[#00C853] hover:bg-[#00B34A] text-white font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+                <button
+                  className="inline-flex items-center justify-center bg-[#00C853] hover:bg-[#00B34A] text-white font-semibold px-8 py-4 text-lg rounded-xl transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00C853] shadow-xl hover:shadow-2xl w-full"
                   onClick={handleGoToCheckout}
+                  data-cta="pricing_primary"
+                  data-variant="A"
+                  aria-label="Garantir meu acesso com a Bia agora"
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  ✅ Quero Começar com o Agente de IA
-                </Button>
+                  💳 Garantir meu acesso com a Bia agora
+                </button>
 
-                <p className="text-xs text-center text-gray-500 dark:text-gray-400">
-                  Acesso liberado em 5 minutos • Sem fidelidade • Tire dúvidas 24h no WhatsApp
+                <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-3">
+                  Acesso em 5 minutos • Garantia de 7 dias • Sem fidelidade
                 </p>
 
                 {/* Trust Elements */}

@@ -17,24 +17,36 @@ const CTA = () => {
             ⚖️ Está Pronto Para Passar na OAB?
           </h2>
           
-          <p className="text-lg lg:text-2xl opacity-95 max-w-2xl mx-auto">
-            Mais de <strong>5.000 estudantes</strong> já aprovaram com o mesmo agente de IA.<br/>
-            Agora é a sua vez de conquistar sua carteira e mudar sua carreira.
+          <p className="text-lg lg:text-2xl opacity-95 max-w-2xl mx-auto leading-relaxed">
+            Sua mentora inteligente está pronta para te guiar passo a passo até a aprovação.<br/>
+            Mais de <strong>5.000 estudantes</strong> já conquistaram sua carteira — agora é a sua vez.
           </p>
+
+          {/* Frase Emocional */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-white/20">
+            <p className="text-xl lg:text-2xl font-bold text-white mb-2">
+              💬 "Acreditamos no seu potencial."
+            </p>
+            <p className="text-base lg:text-lg opacity-90">
+              Já ajudamos milhares de alunos a conquistarem seus sonhos. Você será o próximo.
+            </p>
+          </div>
 
           {/* CTA Principal */}
           <div className="pt-4">
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto text-base lg:text-xl px-10 py-8 bg-[#00C853] hover:bg-[#00B34A] text-white font-bold shadow-2xl hover:shadow-3xl hover:scale-105 transition-all"
+            <button
+              className="inline-flex items-center justify-center bg-[#00C853] hover:bg-[#00B34A] text-white font-semibold px-10 py-5 text-lg lg:text-xl rounded-xl transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00C853] shadow-2xl hover:shadow-3xl w-full sm:w-auto"
               onClick={handleGoToCheckout}
+              data-cta="closing_primary"
+              data-variant="A"
+              aria-label="Quero que a Bia me acompanhe até a aprovação"
             >
               <MessageCircle className="mr-2 h-6 w-6" />
-              💬 Começar Agora com o Agente de IA
-            </Button>
+              💚 Quero que a Bia me acompanhe até a aprovação
+            </button>
           </div>
 
-          <p className="text-base lg:text-lg opacity-90">
+          <p className="text-base lg:text-lg opacity-90 mt-4">
             Acesso imediato • Garantia de 7 dias • Cancele quando quiser
           </p>
           
@@ -46,7 +58,7 @@ const CTA = () => {
             </div>
             <div className="flex items-center gap-2">
               <MessageCircle className="w-5 h-5" />
-              <span>💬 Suporte humano 24h via WhatsApp</span>
+              <span>💬 Disponível 24h no WhatsApp</span>
             </div>
           </div>
         </div>
