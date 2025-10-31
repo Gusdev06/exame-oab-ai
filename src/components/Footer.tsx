@@ -8,10 +8,10 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Scale className="w-8 h-8 text-primary" />
-              <span className="text-xl font-bold">OAB IA</span>
+              <span className="text-xl font-bold">OABIA</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Seu assistente inteligente para aprovação na OAB
+              Conheça a Bia — sua mentora inteligente para passar na OAB
             </p>
           </div>
           
@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2025 OAB IA. Todos os direitos reservados.</p>
+          <p>© 2025 OABIA. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
