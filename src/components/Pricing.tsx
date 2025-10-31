@@ -1,115 +1,102 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, MessageCircle, Sparkles } from "lucide-react";
+import { CheckCircle2, Shield, Zap, Lock, MessageCircle } from "lucide-react";
 
 const Pricing = () => {
   const handleGoToCheckout = () => {
     window.location.href = 'https://pay.kirvano.com/0108b276-b048-4524-91c3-2c8ae9b2dbae';
   };
 
+  const features = [
+    "Mentora IA disponível 24/7 no WhatsApp",
+    "Simulados personalizados e adaptativos",
+    "Revisões automáticas e explicações detalhadas",
+    "Base com 10 anos de provas da OAB",
+    "Plano de estudos adaptado ao seu ritmo",
+    "Garantia de 7 dias • Pagamento 100% seguro"
+  ];
+
   return (
-    <section className="py-24 bg-gradient-to-b from-secondary/30 to-background">
+    <section className="py-20 bg-gray-50 dark:bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4" />
-            Oferta Especial - Vagas Limitadas
+          <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <MessageCircle className="w-4 h-4" />
+            Plano Mensal
           </div>
-          <h2 className="text-4xl font-bold mb-4">
-            Invista na Sua <span className="text-primary">Aprovação</span>
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            💰 Menos de R$1 por Dia Para Mudar Sua Carreira
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Escolha o plano que melhor se encaixa no seu orçamento e comece a estudar hoje mesmo
+          <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400">
+            Acesso completo por apenas <strong className="text-gray-900 dark:text-white">R$19,99/mês</strong>.<br/>
+            Sua mentora inteligente disponível 24h no WhatsApp.
           </p>
         </div>
-        
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-4 border-primary shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-success text-success-foreground px-6 py-2 text-sm font-bold">
+
+        <div className="max-w-lg mx-auto">
+          <Card className="bg-white dark:bg-gray-900 shadow-2xl rounded-2xl border-2 border-blue-200 dark:border-blue-800 relative overflow-hidden">
+            {/* Badge "MAIS POPULAR" */}
+            <div className="absolute top-0 right-0 bg-blue-600 text-white px-6 py-2 rounded-bl-2xl text-xs font-bold z-10">
               MAIS POPULAR
             </div>
-            
-            <CardContent className="p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-3xl font-bold mb-2">Plano Anual</h3>
-                    <p className="text-muted-foreground">
-                      Acesso completo por 12 meses
-                    </p>
+
+            <CardContent className="p-8">
+              <div className="space-y-6">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Plano Mensal</h3>
+                  <div className="flex items-baseline justify-center gap-2 mb-3">
+                    <span className="text-5xl font-extrabold text-blue-600 dark:text-blue-400">R$ 19,99</span>
+                    <span className="text-lg text-gray-500 dark:text-gray-400">/mês</span>
                   </div>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-bold text-primary">R$ 397</span>
-                      <span className="text-muted-foreground line-through">R$ 997</span>
-                    </div>
-                    <p className="text-success font-semibold text-lg">
-                      Ou 12x de R$ 39,90 sem juros
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Apenas R$ 1,08 por dia - menos que um cafezinho ☕
-                    </p>
-                  </div>
-                  
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                      <span>Acesso ilimitado 24/7 ao agente de IA</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                      <span>Simulados personalizados e adaptativos</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                      <span>Mapas mentais e revisões automáticas</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                      <span>Base com 10 anos de provas da OAB</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                      <span>Suporte prioritário no WhatsApp</span>
-                    </li>
-                  </ul>
+                  <p className="text-base text-gray-600 dark:text-gray-400">
+                    Apenas <span className="font-bold">R$ 0,67 por dia</span> - menos que um cafezinho ☕
+                  </p>
                 </div>
-                
-                <div className="space-y-6">
-                  <Button 
-                    size="lg" 
-                    className="w-full text-xl px-8 py-8 bg-gradient-to-r from-success to-success-glow hover:opacity-90 transition-all shadow-xl hover:shadow-2xl hover:scale-105"
-                    onClick={handleGoToCheckout}
-                  >
-                    <MessageCircle className="mr-2 h-6 w-6" />
-                    Garantir Minha Vaga Agora
-                  </Button>
-                  
-                  <div className="bg-secondary/50 rounded-xl p-6 space-y-3">
-                    <div className="flex items-center gap-2 text-success">
-                      <CheckCircle className="w-5 h-5" />
-                      <span className="font-semibold">Garantia de 7 dias</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Se não gostar, devolvemos 100% do seu dinheiro. Sem perguntas.
-                    </p>
+
+                {/* Features */}
+                <ul className="space-y-3 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700 pt-6">
+                  {features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA */}
+                <button
+                  className="inline-flex items-center justify-center bg-[#00C853] hover:bg-[#00B34A] text-white font-semibold px-8 py-4 text-lg rounded-xl transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00C853] shadow-xl hover:shadow-2xl w-full"
+                  onClick={handleGoToCheckout}
+                  data-cta="pricing_primary"
+                  data-variant="A"
+                  aria-label="Garantir meu acesso com a Bia agora"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  💳 Garantir meu acesso com a Bia agora
+                </button>
+
+                <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-3">
+                  Acesso em 5 minutos • Garantia de 7 dias • Sem fidelidade
+                </p>
+
+                {/* Trust Elements */}
+                <div className="space-y-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+                    <Shield className="w-5 h-5 text-green-600 dark:text-green-500 flex-shrink-0" />
+                    <span>Garantia de 7 dias - 100% reembolso</span>
                   </div>
-                  
-                  <div className="text-center space-y-2">
-                    <p className="text-sm text-muted-foreground">🔒 Pagamento seguro e criptografado</p>
-                    <p className="text-sm text-muted-foreground">⚡ Acesso liberado imediatamente</p>
+                  <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+                    <Lock className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                    <span>Pagamento seguro e criptografado</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+                    <Zap className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                    <span>Acesso liberado imediatamente</span>
                   </div>
                 </div>
               </div>
             </CardContent>
           </Card>
-          
-          <div className="mt-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              <strong className="text-primary">Atenção:</strong> Vagas limitadas para garantir qualidade do suporte. Apenas 50 novas vagas por mês.
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -117,3 +104,4 @@ const Pricing = () => {
 };
 
 export default Pricing;
+
