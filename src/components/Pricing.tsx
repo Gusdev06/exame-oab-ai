@@ -27,10 +27,10 @@ const Pricing = () => {
             Plano Mensal
           </div>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight">
-            Menos de R$1 por Dia Para Mudar Sua Carreira
+            Menos de R$2 por Dia Para Mudar Sua Carreira
           </h2>
           <p className="text-lg lg:text-xl text-gray-400 leading-relaxed">
-            Acesso completo por apenas <strong className="text-white">R$19,99/mês</strong>.<br/>
+            Acesso completo por apenas <strong className="text-white">R$39,99/mês</strong>.<br/>
             Sua mentora inteligente disponível 24h no WhatsApp.
           </p>
         </div>
@@ -46,12 +46,15 @@ const Pricing = () => {
               <div className="space-y-8">
                 <div className="text-center">
                   <h3 className="text-3xl font-extrabold text-white mb-4 tracking-tight">Plano Mensal</h3>
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <span className="text-2xl text-gray-500 line-through font-semibold">R$ 297,00</span>
+                  </div>
                   <div className="flex items-baseline justify-center gap-2 mb-4">
-                    <span className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">R$ 19,99</span>
+                    <span className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">R$ 39,99</span>
                     <span className="text-xl text-gray-400 font-medium">/mês</span>
                   </div>
                   <p className="text-base text-gray-400">
-                    Apenas <span className="font-bold text-white">R$ 0,67 por dia</span> - menos que um cafezinho
+                    Apenas <span className="font-bold text-white">R$ 1,33 por dia</span> - menos que um cafezinho
                   </p>
                 </div>
 

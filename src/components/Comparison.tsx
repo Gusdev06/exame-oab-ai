@@ -18,7 +18,7 @@ const Comparison = () => {
       icon: DollarSign,
       category: "Custo Total",
       without: "R$ 5.200+ (cursos + material)",
-      with: "R$ 19,99/mês economia de R$ 5.000+",
+      with: "R$ 39,99/mês economia de R$ 5.000+",
       highlight: "Economia de R$ 5.000+"
     },
     {
