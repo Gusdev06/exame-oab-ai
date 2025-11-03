@@ -146,7 +146,7 @@ const Comparison = () => {
           </div>
 
           {/* CTA Premium */}
-          <div className="mt-16 lg:mt-20 text-center max-w-3xl mx-auto px-4">
+          {/* <div className="mt-16 lg:mt-20 text-center max-w-3xl mx-auto px-4">
             <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 lg:p-10 shadow-2xl border border-white/10">
               <p className="text-2xl lg:text-3xl font-bold text-white mb-4 tracking-tight">
                 Está pronto para transformar seus estudos?
@@ -172,7 +172,7 @@ const Comparison = () => {
                 Acesso imediato • Garantia de 7 dias • Disponível 24h no WhatsApp
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

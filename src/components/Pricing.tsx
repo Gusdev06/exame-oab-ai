@@ -16,7 +16,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-[#0B1120] relative overflow-hidden">
+    <section id="precos" className="py-24 md:py-32 bg-[#0B1120] relative overflow-hidden">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
       

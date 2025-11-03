@@ -29,6 +29,13 @@ const MeetBia = () => {
     window.location.href = 'https://pay.kirvano.com/0108b276-b048-4524-91c3-2c8ae9b2dbae';
   };
 
+  const handleScrollToPricing = () => {
+    const pricingSection = document.getElementById('precos');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="conheca-bia" className="py-24 md:py-32 bg-[#0F1419] relative overflow-hidden">
       {/* Background Grid Pattern */}
@@ -114,12 +121,12 @@ const MeetBia = () => {
               </button>
               <button
                 className="inline-flex items-center justify-center bg-white/5 backdrop-blur-xl border border-white/10 text-white hover:bg-white/10 font-medium px-8 py-4 text-base lg:text-lg rounded-xl transition-all duration-300 hover:scale-105 hover:border-white/20 focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-[#0F1419] w-full sm:w-auto"
-                onClick={handleGoToCheckout}
+                onClick={handleScrollToPricing}
                 data-cta="persona_secondary"
                 data-variant="A"
                 aria-label="Ver como a Bia personaliza meus estudos"
               >
-                Ver planos personalizados
+                Ver planos
               </button>
             </div>
             <p className="text-sm text-gray-500 mt-6">

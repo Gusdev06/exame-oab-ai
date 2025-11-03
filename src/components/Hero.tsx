@@ -38,7 +38,7 @@ const Hero = () => {
             {/* Estatística de destaque */}
             <div className="inline-block bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl px-8 py-4 shadow-2xl">
               <p className="text-2xl md:text-3xl font-bold text-emerald-400">
-                89% dos alunos são aprovados na 1ª tentativa
+                89% dos alunos sãgo aprovados na 1ª tentativa
               </p>
               <p className="text-lg text-gray-400 font-normal mt-1">
                 Você pode ser o próximo.
