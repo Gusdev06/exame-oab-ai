@@ -5,7 +5,7 @@ const features = [
   {
     icon: Brain,
     title: "💡 IA Especializada em OAB",
-    description: "Treinada com 10 anos de provas oficiais. Sabe exatamente o que a banca cobra — e como você deve responder para acertar mais."
+    description: "Treinada com 10 anos de provas oficiais. Sabe exatamente o que a banca cobra e como você deve responder para acertar mais."
   },
   {
     icon: MessageSquare,
@@ -25,7 +25,7 @@ const features = [
   {
     icon: Clock,
     title: "🕓 Flexibilidade Total",
-    description: "Estude onde e quando quiser — no ônibus, na pausa do trabalho ou em casa. Você define o ritmo, a IA guia o caminho."
+    description: "Estude onde e quando quiser no ônibus, na pausa do trabalho ou em casa. Você define o ritmo, a IA guia o caminho."
   },
   {
     icon: Zap,
