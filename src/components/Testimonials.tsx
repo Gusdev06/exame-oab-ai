@@ -28,80 +28,89 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+    <section className="py-24 md:py-32 bg-[#0F1419] relative overflow-hidden">
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+      
+      {/* Gradient Orbs */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-20 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-5 py-2.5 rounded-full text-sm font-semibold mb-8 backdrop-blur-xl">
             <Star className="w-4 h-4" />
             Prova Social
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            ⭐ Histórias de Quem Passou na OAB
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight drop-shadow-lg">
+            Histórias de Quem Passou na OAB
           </h2>
-          <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-8">
+          <p className="text-lg lg:text-xl text-gray-400 mb-12 leading-relaxed">
             Veja o que os alunos têm a dizer depois de conquistar a aprovação.
           </p>
           
-          {/* Estatísticas Consolidadas */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
-            <div className="space-y-2">
-              <p className="text-3xl font-bold text-green-600 dark:text-green-500">✅ 5.000+</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Aprovados em 2024</p>
+          {/* Estatísticas Consolidadas Premium - Responsivo */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto mb-16">
+            <div className="space-y-2 sm:space-y-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-300">
+              <p className="text-3xl sm:text-4xl font-extrabold text-emerald-400 drop-shadow-lg">5.000+</p>
+              <p className="text-xs sm:text-sm text-gray-400 font-medium">Aprovados em 2024</p>
             </div>
-            <div className="space-y-2">
-              <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">⚡ 89%</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Aprovação na 1ª tentativa</p>
+            <div className="space-y-2 sm:space-y-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
+              <p className="text-3xl sm:text-4xl font-extrabold text-blue-400 drop-shadow-lg">89%</p>
+              <p className="text-xs sm:text-sm text-gray-400 font-medium">Aprovação na 1ª tentativa</p>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 sm:space-y-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
               <div className="flex items-center justify-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">🌟 Nota 4.9/5</p>
+              <p className="text-xs sm:text-sm text-gray-400 font-medium">Nota 4.9/5</p>
             </div>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Cards de Depoimentos Premium */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index} 
-              className="border-2 border-gray-200 dark:border-gray-800 hover:border-green-300 dark:hover:border-green-700 transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-900 animate-fade-in"
+              className="bg-white/5 backdrop-blur-xl border-2 border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:scale-105 rounded-3xl animate-slide-up relative overflow-hidden"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <CardContent className="p-6 space-y-4">
-                <Quote className="w-10 h-10 text-blue-200 dark:text-blue-800" />
-                
+              {/* Quote Icon Background */}
+              <Quote className="w-20 h-20 sm:w-24 sm:h-24 text-emerald-400/20 absolute -top-4 -right-4 rotate-12" />
+              
+              <CardContent className="p-6 sm:p-8 space-y-4 sm:space-y-5 relative z-10">
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
                 
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed italic">
+                <p className="text-gray-200 leading-relaxed italic font-medium text-sm sm:text-base">
                   "{testimonial.content}"
                 </p>
                 
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <p className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
+                <div className="pt-3 sm:pt-4 border-t border-white/20">
+                  <p className="font-bold text-white text-base sm:text-lg">{testimonial.name}</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">{testimonial.role}</p>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* CTA Prova Social */}
-        <div className="text-center mt-12">
+        {/* CTA Prova Social Premium */}
+        <div className="text-center mt-12 sm:mt-16">
           <button
-            className="inline-flex items-center justify-center border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium px-8 py-4 text-base lg:text-lg rounded-xl transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
+            className="inline-flex items-center justify-center bg-white/5 backdrop-blur-xl border border-white/10 text-white hover:bg-white/10 font-medium px-6 sm:px-8 py-3 sm:py-4 text-base lg:text-lg rounded-xl transition-all duration-300 hover:scale-105 hover:border-white/20 focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-[#0F1419] w-full sm:w-auto max-w-md sm:max-w-none mx-auto"
             onClick={handleGoToCheckout}
             data-cta="social_primary"
             data-variant="A"
             aria-label="Ver mais histórias de quem estudou com a Bia"
           >
-            🌟 Ver mais histórias de quem estudou com a Bia
+            Ver mais histórias de sucesso
           </button>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { Play, Clock, MessageCircle, Brain } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Demo = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -19,30 +18,33 @@ const Demo = () => {
   };
 
   return (
-    <section className="py-24 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+    <section className="py-24 md:py-32 bg-[#0B1120] relative overflow-hidden">
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-5 py-2.5 rounded-full text-sm font-semibold mb-8 backdrop-blur-xl">
             <Play className="w-4 h-4" />
             Demonstração Ao Vivo
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            🎥 Veja a Bia em Ação no WhatsApp
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight">
+            Veja a <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Bia</span> em Ação no WhatsApp
           </h2>
-          <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400">
-            Veja com seus próprios olhos como funciona na prática — explicações claras em tempo real, direto no seu WhatsApp.
+          <p className="text-lg lg:text-xl text-gray-400 leading-relaxed">
+            Veja com seus próprios olhos como funciona na prática, explicações claras em tempo real, direto no seu WhatsApp.
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto">
-          {/* iPhone Mockup */}
-          <div className="flex justify-center mb-12">
-            <div className="relative">
-              {/* Glow animado */}
-              <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 to-transparent rounded-[3.5rem] blur-2xl animate-pulse"></div>
+          {/* iPhone Mockup Premium */}
+          <div className="flex justify-center mb-16">
+            <div className="relative animate-fade-in">
+              {/* Glow animado premium */}
+              <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/20 to-blue-500/20 rounded-[3.5rem] blur-3xl animate-pulse-slow"></div>
               
-              {/* iPhone Frame com efeito 3D */}
-              <div className="relative bg-gradient-to-b from-gray-900 via-black to-gray-900 rounded-[3.5rem] p-[6px] shadow-2xl border border-gray-800">
+              {/* iPhone Frame com efeito 3D Premium */}
+              <div className="relative bg-gradient-to-b from-gray-900 via-black to-gray-900 rounded-[3.5rem] p-[6px] shadow-2xl border border-gray-800 hover:scale-105 transition-transform duration-500">
                 {/* Botões laterais */}
                 <div className="absolute left-0 top-32 w-1 h-16 bg-gray-800 rounded-l-full"></div>
                 <div className="absolute right-0 top-40 w-1 h-20 bg-gray-800 rounded-r-full"></div>
@@ -97,7 +99,7 @@ const Demo = () => {
                       {!videoLoaded && (
                         <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-blue-600/20 to-black/60">
                           <div className="text-center space-y-4 px-8">
-                            <div className="w-20 h-20 mx-auto rounded-full bg-[#00C853]/30 backdrop-blur-sm flex items-center justify-center border-2 border-[#00C853]/50 animate-ping">
+                            <div className="w-20 h-20 mx-auto rounded-full bg-emerald-500/30 backdrop-blur-sm flex items-center justify-center border-2 border-emerald-500/50 animate-pulse">
                               <Play className="w-10 h-10 text-white ml-1" />
                             </div>
                             <div>
@@ -121,58 +123,61 @@ const Demo = () => {
             </div>
           </div>
 
-          {/* CTA abaixo do vídeo */}
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 font-medium">
-              👇 Gostou? Comece agora a estudar de forma inteligente no seu WhatsApp!
-            </p>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <button
-                className="inline-flex items-center justify-center bg-[#00C853] hover:bg-[#00B34A] text-white font-semibold px-10 py-4 text-base lg:text-lg rounded-xl transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00C853] shadow-xl hover:shadow-2xl w-full sm:w-auto"
-                onClick={handleGoToCheckout}
-                data-cta="video_primary"
-                data-variant="A"
-                aria-label="Ver a Bia em ação"
-              >
-                ▶️ Começar um teste com a Bia
-              </button>
+          {/* CTA abaixo do vídeo Premium */}
+          <div className="text-center mb-20 max-w-2xl mx-auto">
+            <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/10">
+              <p className="text-lg text-gray-300 mb-6 font-semibold">
+                Gostou? Comece agora a estudar de forma inteligente no seu WhatsApp
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <button
+                  className="group relative inline-flex items-center justify-center bg-gradient-to-b from-emerald-500 to-emerald-600 text-white font-semibold px-10 py-4 text-base lg:text-lg rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-[#0B1120] w-full sm:w-auto shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                  onClick={handleGoToCheckout}
+                  data-cta="video_primary"
+                  data-variant="A"
+                  aria-label="Ver a Bia em ação"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative z-10">Testar a Bia agora</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Mini Cards de Destaque */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-            <div className="text-center space-y-3 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition-all duration-200 group">
-              <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:scale-105 transition-all duration-200">
-                <Clock className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+          {/* Mini Cards de Destaque Premium */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-16">
+            <div className="text-center space-y-4 p-6 sm:p-8 bg-white/5 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-white/10 hover:border-blue-500/30 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/50">
+                <Clock className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h3 className="font-bold text-lg text-gray-900 dark:text-white flex items-center justify-center gap-2">
-                ⏱️ Respostas em Segundos
+              <h3 className="font-bold text-lg sm:text-xl text-white">
+                Respostas em Segundos
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                 Tire dúvidas em qualquer hora. Sem espera, sem fila, sem complicação.
               </p>
             </div>
             
-            <div className="text-center space-y-3 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition-all duration-200 group">
-              <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:scale-105 transition-all duration-200">
-                <MessageCircle className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            <div className="text-center space-y-4 p-6 sm:p-8 bg-white/5 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-white/10 hover:border-blue-500/30 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/50">
+                <MessageCircle className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h3 className="font-bold text-lg text-gray-900 dark:text-white flex items-center justify-center gap-2">
-                💬 Conversação Natural
+              <h3 className="font-bold text-lg sm:text-xl text-white">
+                Conversação Natural
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Fale como se estivesse com uma amiga — explicações claras que você realmente entende.
+              <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+                Fale como se estivesse com uma amiga, explicações claras que você realmente entende.
               </p>
             </div>
             
-            <div className="text-center space-y-3 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition-all duration-200 group">
-              <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:scale-105 transition-all duration-200">
-                <Brain className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            <div className="text-center space-y-4 p-6 sm:p-8 bg-white/5 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-white/10 hover:border-blue-500/30 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/50">
+                <Brain className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h3 className="font-bold text-lg text-gray-900 dark:text-white flex items-center justify-center gap-2">
-                🧠 Simulados Personalizados
+              <h3 className="font-bold text-lg sm:text-xl text-white">
+                Simulados Personalizados
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                 Simulados sob medida para seu ritmo e matérias que você mais precisa reforçar.
               </p>
             </div>
@@ -184,4 +189,3 @@ const Demo = () => {
 };
 
 export default Demo;
-
