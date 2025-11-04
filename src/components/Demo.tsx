@@ -1,15 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { Play, Clock, MessageCircle, Brain } from "lucide-react";
 
-// URL do vídeo do Vimeo
-// Link original: https://vimeo.com/1133582936
-// Link embed para player: https://player.vimeo.com/video/1133582936
-const VIMEO_VIDEO_ID = "1133582936";
-const VIMEO_EMBED_URL = `https://player.vimeo.com/video/${VIMEO_VIDEO_ID}?badge=0&autopause=0&player_id=0&app_id=58479`;
+// URL do vídeo local
+const VIDEO_URL = "/video-720p.mp4";
 
 const Demo = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Estratégia híbrida para carregar o vídeo
@@ -17,6 +15,9 @@ const Demo = () => {
     const loadVideo = () => {
       if (!shouldLoadVideo) {
         setShouldLoadVideo(true);
+        if (videoRef.current) {
+          videoRef.current.load();
+        }
       }
     };
 
@@ -139,20 +140,26 @@ const Demo = () => {
                     </div>
                   </div>
 
-                  {/* Video Container */}
-                  <div className="relative w-full h-[calc(100%-44px)] bg-black overflow-hidden">
-                    {/* Vídeo do Vimeo */}
-                    {shouldLoadVideo ? (
-                      <iframe
-                        src={VIMEO_EMBED_URL}
-                        className={`w-full h-full ${videoLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-                        style={{ border: 0, backgroundColor: '#000' }}
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
-                        onLoad={handleVideoLoad}
-                        title="Demo Bia - WhatsApp"
-                      />
-                    ) : null}
+                   {/* Video Container */}
+                   <div className="relative w-full h-[calc(100%-44px)] bg-black overflow-hidden">
+                     {/* Vídeo */}
+                     {shouldLoadVideo ? (
+                       <video
+                         ref={videoRef}
+                         className={`w-full h-full object-cover ${videoLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+                         controls
+                         preload="auto"
+                         style={{ backgroundColor: '#000', display: 'block', width: '100%', height: '100%' }}
+                         onLoadedData={handleVideoLoad}
+                         onCanPlay={handleCanPlay}
+                         onError={handleVideoError}
+                         playsInline
+                         muted
+                       >
+                         <source src={VIDEO_URL} type="video/mp4" />
+                         Seu navegador não suporta o elemento de vídeo.
+                       </video>
+                     ) : null}
                     
                     {/* Loader simples - aparece quando vídeo não está carregado */}
                     {!videoLoaded && (
