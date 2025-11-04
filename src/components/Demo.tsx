@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Play, Clock, MessageCircle, Brain } from "lucide-react";
 
-// URL do vídeo local
-const VIDEO_URL = "/video-720p.mp4";
+// URL do vídeo hospedado no Supabase Storage
+const VIDEO_URL = "https://mlrnnrubodrcpkbrhneh.supabase.co/storage/v1/object/public/videos/video-720p.mp4";
 
 const Demo = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
