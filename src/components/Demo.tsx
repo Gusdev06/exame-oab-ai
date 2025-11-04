@@ -1,9 +1,45 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Play, Clock, MessageCircle, Brain } from "lucide-react";
 
 const Demo = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Intersection Observer para lazy loading - carrega quando próximo à viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoadVideo(true);
+            // Carrega o vídeo quando entra na viewport
+            if (videoRef.current) {
+              videoRef.current.load();
+            }
+            // Para de observar após carregar
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        // Carrega quando estiver a 200px da viewport
+        rootMargin: '200px',
+        threshold: 0.1,
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
 
   const handleVideoLoad = () => {
     setVideoLoaded(true);
@@ -11,6 +47,11 @@ const Demo = () => {
 
   const handleVideoError = () => {
     setVideoLoaded(false);
+  };
+
+  // Detecta quando o vídeo pode ser reproduzido (readyState >= 3 = HAVE_FUTURE_DATA)
+  const handleCanPlay = () => {
+    setVideoLoaded(true);
   };
 
   const handleGoToCheckout = () => {
@@ -38,7 +79,7 @@ const Demo = () => {
 
         <div className="max-w-5xl mx-auto">
           {/* iPhone Mockup Premium */}
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-16" ref={containerRef}>
             <div className="relative animate-fade-in">
               {/* Glow animado premium */}
               <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/20 to-blue-500/20 rounded-[3.5rem] blur-3xl animate-pulse-slow"></div>
@@ -80,19 +121,27 @@ const Demo = () => {
                   {/* Video Container */}
                   <div className="relative w-full h-[calc(100%-44px)] bg-black overflow-hidden">
                     {/* Vídeo */}
-                    <video
-                      ref={videoRef}
-                      className={`w-full h-full object-cover ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-                      controls
-                      style={{ backgroundColor: '#000', display: 'block', width: '100%', height: '100%' }}
-                      onLoadedData={handleVideoLoad}
-                      onError={handleVideoError}
-                      playsInline
-                    >
-                      <source src="/video.MOV" type="video/quicktime" />
-                      <source src="/video.MOV" type="video/mp4" />
-                      Seu navegador não suporta o elemento de vídeo.
-                    </video>
+                    {shouldLoadVideo ? (
+                      <video
+                        ref={videoRef}
+                        className={`w-full h-full object-cover ${videoLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+                        controls
+                        preload="auto"
+                        style={{ backgroundColor: '#000', display: 'block', width: '100%', height: '100%' }}
+                        onLoadedData={handleVideoLoad}
+                        onCanPlay={handleCanPlay}
+                        onError={handleVideoError}
+                        playsInline
+                        muted
+                      >
+                        <source src="/video-720p.mp4" type="video/mp4" />
+                        Seu navegador não suporta o elemento de vídeo.
+                      </video>
+                    ) : (
+                      <div className="w-full h-full bg-black flex items-center justify-center">
+                        <div className="text-white/50 text-sm">O vídeo será carregado em breve...</div>
+                      </div>
+                    )}
                     
                     {/* Loader simples - aparece quando vídeo não está carregado */}
                     {!videoLoaded && (
