@@ -102,7 +102,7 @@ const Hero = () => {
             </div>
 
             {/* Seção de Urgência Premium */}
-            <div className="mt-20 relative animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            {/* <div className="mt-20 relative animate-slide-up" style={{ animationDelay: '0.3s' }}>
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-3xl opacity-50 blur-2xl"></div>
               <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl p-8 lg:p-12 max-w-5xl mx-auto border border-white/10">
                 <div className="flex justify-center mb-6">
@@ -144,7 +144,7 @@ const Hero = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

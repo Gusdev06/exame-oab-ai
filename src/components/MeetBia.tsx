@@ -49,7 +49,7 @@ const MeetBia = () => {
             Sua Parceira de Estudos
           </div>
           <h2 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight text-white tracking-tight">
-            Conheça a <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Bia</span> sua mentora inteligente rumo à aprovação na OAB
+          O que a <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Bia</span> faz por você?
           </h2>
           <p className="text-xl text-gray-400 leading-relaxed">
             Ela analisa seu desempenho, cria planos de estudo personalizados e te ajuda a revisar o que mais cai.<br/>
@@ -78,8 +78,8 @@ const MeetBia = () => {
           ))}
         </div>
 
-        {/* Seção Emocional Premium */}
-        <div className="max-w-5xl mx-auto text-center space-y-10 bg-white/5 backdrop-blur-xl shadow-2xl rounded-3xl p-10 lg:p-16 border border-white/10 animate-slide-up">
+
+        {/* <div className="max-w-5xl mx-auto text-center space-y-10 bg-white/5 backdrop-blur-xl shadow-2xl rounded-3xl p-10 lg:p-16 border border-white/10 animate-slide-up">
           <div className="space-y-6">
             <p className="text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight">
               Com a <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Bia</span>, você não estuda sozinho
@@ -89,7 +89,7 @@ const MeetBia = () => {
             </p>
           </div>
 
-          {/* Stats Premium */}
+
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto py-8">
             <div className="space-y-2 sm:space-y-3 p-4 sm:p-6 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl hover:border-emerald-500/40 transition-all duration-300">
               <p className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-emerald-400">89%</p>
@@ -105,7 +105,7 @@ const MeetBia = () => {
             </div>
           </div>
 
-          {/* CTA Premium */}
+ 
           <div className="pt-6">
             <div className="flex flex-wrap gap-4 justify-center">
               <button
@@ -133,7 +133,7 @@ const MeetBia = () => {
               Acesso imediato • Garantia de 7 dias • Te espera no WhatsApp
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
