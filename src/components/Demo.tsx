@@ -94,25 +94,10 @@ const Demo = () => {
                       Seu navegador não suporta o elemento de vídeo.
                     </video>
                     
-                    {/* Overlay placeholder - aparece quando vídeo não está carregado */}
+                    {/* Loader simples - aparece quando vídeo não está carregado */}
                     {!videoLoaded && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-blue-600/20 to-black/60">
-                        <div className="text-center space-y-4 px-8">
-                          <div className="w-20 h-20 mx-auto rounded-full bg-emerald-500/30 backdrop-blur-sm flex items-center justify-center border-2 border-emerald-500/50 animate-pulse">
-                            <Play className="w-10 h-10 text-white ml-1" />
-                          </div>
-                          <div>
-                            <p className="text-white font-semibold text-lg mb-1">
-                              Vídeo Demonstrativo
-                            </p>
-                            <p className="text-white/80 text-sm max-w-xs">
-                              Carregando vídeo...
-                            </p>
-                            <p className="text-white/60 text-xs mt-2">
-                              Formatos suportados: MOV, MP4
-                            </p>
-                          </div>
-                        </div>
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/80">
+                        <div className="w-16 h-16 border-4 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
                       </div>
                     )}
                   </div>
