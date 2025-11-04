@@ -7,26 +7,36 @@ const Demo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Intersection Observer para lazy loading - carrega quando próximo à viewport
+  // Estratégia híbrida para carregar o vídeo
   useEffect(() => {
+    const loadVideo = () => {
+      if (videoRef.current && !shouldLoadVideo) {
+        setShouldLoadVideo(true);
+        videoRef.current.load();
+      }
+    };
+
+    // Tenta carregar imediatamente quando a página estiver pronta
+    if (document.readyState === 'complete') {
+      loadVideo();
+    } else {
+      window.addEventListener('load', loadVideo);
+    }
+
+    // Intersection Observer para mobile - carrega muito antes de aparecer na tela
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShouldLoadVideo(true);
-            // Carrega o vídeo quando entra na viewport
-            if (videoRef.current) {
-              videoRef.current.load();
-            }
-            // Para de observar após carregar
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
+            loadVideo();
             observer.unobserve(entry.target);
           }
         });
       },
       {
-        // Carrega quando estiver a 200px da viewport
-        rootMargin: '200px',
-        threshold: 0.1,
+        // Carrega quando estiver a 500px da viewport (muito antes de aparecer)
+        rootMargin: '500px',
+        threshold: 0,
       }
     );
 
@@ -34,12 +44,19 @@ const Demo = () => {
       observer.observe(containerRef.current);
     }
 
+    // Timeout de segurança - força carregamento após 1 segundo
+    const timeoutId = setTimeout(() => {
+      loadVideo();
+    }, 1000);
+
     return () => {
+      window.removeEventListener('load', loadVideo);
       if (containerRef.current) {
         observer.unobserve(containerRef.current);
       }
+      clearTimeout(timeoutId);
     };
-  }, []);
+  }, [shouldLoadVideo]);
 
   const handleVideoLoad = () => {
     setVideoLoaded(true);
@@ -49,7 +66,7 @@ const Demo = () => {
     setVideoLoaded(false);
   };
 
-  // Detecta quando o vídeo pode ser reproduzido (readyState >= 3 = HAVE_FUTURE_DATA)
+  // Detecta quando o vídeo pode ser reproduzido
   const handleCanPlay = () => {
     setVideoLoaded(true);
   };
@@ -137,11 +154,7 @@ const Demo = () => {
                         <source src="/video-720p.mp4" type="video/mp4" />
                         Seu navegador não suporta o elemento de vídeo.
                       </video>
-                    ) : (
-                      <div className="w-full h-full bg-black flex items-center justify-center">
-                        <div className="text-white/50 text-sm">O vídeo será carregado em breve...</div>
-                      </div>
-                    )}
+                    ) : null}
                     
                     {/* Loader simples - aparece quando vídeo não está carregado */}
                     {!videoLoaded && (
