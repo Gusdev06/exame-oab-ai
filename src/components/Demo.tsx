@@ -6,73 +6,23 @@ const VIDEO_URL = "https://mlrnnrubodrcpkbrhneh.supabase.co/storage/v1/object/pu
 
 const Demo = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Estratégia híbrida para carregar o vídeo
-  useEffect(() => {
-    const loadVideo = () => {
-      if (!shouldLoadVideo) {
-        setShouldLoadVideo(true);
-        if (videoRef.current) {
-          videoRef.current.load();
-        }
-      }
-    };
-
-    // Tenta carregar imediatamente quando a página estiver pronta
-    if (document.readyState === 'complete') {
-      loadVideo();
-    } else {
-      window.addEventListener('load', loadVideo);
-    }
-
-    // Intersection Observer para mobile - carrega muito antes de aparecer na tela
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting || entry.intersectionRatio > 0) {
-            loadVideo();
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        // Carrega quando estiver a 500px da viewport (muito antes de aparecer)
-        rootMargin: '500px',
-        threshold: 0,
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    // Timeout de segurança - força carregamento após 1 segundo
-    const timeoutId = setTimeout(() => {
-      loadVideo();
-    }, 1000);
-
-    return () => {
-      window.removeEventListener('load', loadVideo);
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-      clearTimeout(timeoutId);
-    };
-  }, [shouldLoadVideo]);
 
   const handleVideoLoad = () => {
     setVideoLoaded(true);
   };
 
-  const handleVideoError = () => {
+  const handleVideoError = (e: any) => {
+    console.error('Erro ao carregar vídeo:', e);
     setVideoLoaded(false);
   };
 
-  // Detecta quando o vídeo pode ser reproduzido
+  // Detecta quando o vídeo pode ser reproduzido - múltiplos eventos para compatibilidade
   const handleCanPlay = () => {
+    setVideoLoaded(true);
+  };
+
+  const handleLoadedMetadata = () => {
     setVideoLoaded(true);
   };
 
@@ -101,7 +51,7 @@ const Demo = () => {
 
         <div className="max-w-5xl mx-auto">
           {/* iPhone Mockup Premium */}
-          <div className="flex justify-center mb-16" ref={containerRef}>
+          <div className="flex justify-center mb-16">
             <div className="relative animate-fade-in">
               {/* Glow animado premium */}
               <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/20 to-blue-500/20 rounded-[3.5rem] blur-3xl animate-pulse-slow"></div>
@@ -143,23 +93,22 @@ const Demo = () => {
                    {/* Video Container */}
                    <div className="relative w-full h-[calc(100%-44px)] bg-black overflow-hidden">
                      {/* Vídeo */}
-                     {shouldLoadVideo ? (
-                       <video
-                         ref={videoRef}
-                         className={`w-full h-full object-cover ${videoLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-                         controls
-                         preload="auto"
-                         style={{ backgroundColor: '#000', display: 'block', width: '100%', height: '100%' }}
-                         onLoadedData={handleVideoLoad}
-                         onCanPlay={handleCanPlay}
-                         onError={handleVideoError}
-                         playsInline
-                         muted
-                       >
-                         <source src={VIDEO_URL} type="video/mp4" />
-                         Seu navegador não suporta o elemento de vídeo.
-                       </video>
-                     ) : null}
+                     <video
+                       ref={videoRef}
+                       className={`w-full h-full object-cover ${videoLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
+                       controls
+                       preload="metadata"
+                       style={{ backgroundColor: '#000', display: 'block', width: '100%', height: '100%' }}
+                       onLoadedData={handleVideoLoad}
+                       onLoadedMetadata={handleLoadedMetadata}
+                       onCanPlay={handleCanPlay}
+                       onError={handleVideoError}
+                       playsInline
+                       crossOrigin="anonymous"
+                     >
+                       <source src={VIDEO_URL} type="video/mp4" />
+                       Seu navegador não suporta o elemento de vídeo.
+                     </video>
                     
                     {/* Loader simples - aparece quando vídeo não está carregado */}
                     {!videoLoaded && (
