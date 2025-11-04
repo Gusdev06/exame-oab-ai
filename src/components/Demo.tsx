@@ -57,66 +57,64 @@ const Demo = () => {
                 </div>
                 
                 {/* Screen */}
-                <div className="bg-white rounded-[3rem] overflow-hidden w-[320px] h-[693px] md:w-[375px] md:h-[812px] relative shadow-inner">
+                <div className="bg-black rounded-[3rem] overflow-hidden w-[320px] h-[693px] md:w-[375px] md:h-[812px] relative shadow-inner">
                   {/* Status Bar */}
-                  <div className="bg-white px-6 pt-3 pb-2 flex justify-between items-center text-xs font-semibold relative z-20">
-                    <span className="font-bold">9:41</span>
+                  <div className="bg-black px-6 pt-3 pb-2 flex justify-between items-center text-xs font-semibold relative z-20">
+                    <span className="font-bold text-white">9:41</span>
                     <div className="flex items-center gap-1">
-                      <div className="w-[17px] h-[10px] border border-black rounded-sm relative">
-                        <div className="absolute inset-[1px] rounded-sm bg-black"></div>
+                      <div className="w-[17px] h-[10px] border border-white rounded-sm relative">
+                        <div className="absolute inset-[1px] rounded-sm bg-white"></div>
                       </div>
                       <svg width="17" height="10" viewBox="0 0 17 10" fill="none" className="ml-0.5">
-                        <rect x="0.5" y="0.5" width="16" height="9" rx="1" stroke="black" strokeWidth="1"/>
-                        <path d="M2 2H15V8H2V2Z" fill="black"/>
+                        <rect x="0.5" y="0.5" width="16" height="9" rx="1" stroke="white" strokeWidth="1"/>
+                        <path d="M2 2H15V8H2V2Z" fill="white"/>
                       </svg>
                       <svg width="15" height="11" viewBox="0 0 15 11" fill="none" className="ml-0.5">
-                        <path d="M0 0H15V11H0V0Z" fill="black"/>
-                        <path d="M1 1H14V10H1V1Z" fill="white"/>
-                        <path d="M3 2H12V9H3V2Z" fill="black"/>
+                        <path d="M0 0H15V11H0V0Z" fill="white"/>
+                        <path d="M1 1H14V10H1V1Z" fill="black"/>
+                        <path d="M3 2H12V9H3V2Z" fill="white"/>
                       </svg>
                     </div>
                   </div>
 
                   {/* Video Container */}
-                  <div className="relative w-full h-[calc(100%-44px)] bg-black flex items-center justify-center">
-                    <div className="w-full h-full relative">
-                      {/* Vídeo */}
-                      <video
-                        ref={videoRef}
-                        className={`w-full h-full object-cover ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-                        controls
-                        style={{ backgroundColor: '#000' }}
-                        onLoadedData={handleVideoLoad}
-                        onError={handleVideoError}
-                        playsInline
-                      >
-                        <source src="/demo-video.mp4" type="video/mp4" />
-                        <source src="/demo-video.webm" type="video/webm" />
-                        Seu navegador não suporta o elemento de vídeo.
-                      </video>
-                      
-                      {/* Overlay placeholder - aparece quando vídeo não está carregado */}
-                      {!videoLoaded && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-blue-600/20 to-black/60">
-                          <div className="text-center space-y-4 px-8">
-                            <div className="w-20 h-20 mx-auto rounded-full bg-emerald-500/30 backdrop-blur-sm flex items-center justify-center border-2 border-emerald-500/50 animate-pulse">
-                              <Play className="w-10 h-10 text-white ml-1" />
-                            </div>
-                            <div>
-                              <p className="text-white font-semibold text-lg mb-1">
-                                Vídeo Demonstrativo
-                              </p>
-                              <p className="text-white/80 text-sm max-w-xs">
-                                Adicione seu vídeo em <code className="bg-black/30 px-2 py-1 rounded">/public/demo-video.mp4</code>
-                              </p>
-                              <p className="text-white/60 text-xs mt-2">
-                                Formatos suportados: MP4, WebM
-                              </p>
-                            </div>
+                  <div className="relative w-full h-[calc(100%-44px)] bg-black overflow-hidden">
+                    {/* Vídeo */}
+                    <video
+                      ref={videoRef}
+                      className={`w-full h-full object-cover ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                      controls
+                      style={{ backgroundColor: '#000', display: 'block', width: '100%', height: '100%' }}
+                      onLoadedData={handleVideoLoad}
+                      onError={handleVideoError}
+                      playsInline
+                    >
+                      <source src="/video.MOV" type="video/quicktime" />
+                      <source src="/video.MOV" type="video/mp4" />
+                      Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    
+                    {/* Overlay placeholder - aparece quando vídeo não está carregado */}
+                    {!videoLoaded && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-blue-600/20 to-black/60">
+                        <div className="text-center space-y-4 px-8">
+                          <div className="w-20 h-20 mx-auto rounded-full bg-emerald-500/30 backdrop-blur-sm flex items-center justify-center border-2 border-emerald-500/50 animate-pulse">
+                            <Play className="w-10 h-10 text-white ml-1" />
+                          </div>
+                          <div>
+                            <p className="text-white font-semibold text-lg mb-1">
+                              Vídeo Demonstrativo
+                            </p>
+                            <p className="text-white/80 text-sm max-w-xs">
+                              Carregando vídeo...
+                            </p>
+                            <p className="text-white/60 text-xs mt-2">
+                              Formatos suportados: MOV, MP4
+                            </p>
                           </div>
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
