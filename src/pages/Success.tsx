@@ -45,7 +45,7 @@ const Success = () => {
 
   const handleGoToChat = () => {
     // Redireciona para o WhatsApp
-    const whatsappNumber = "5511951594226";
+    const whatsappNumber = "5511995858361";
     window.location.href = `https://wa.me/${whatsappNumber}`;
   };
 
