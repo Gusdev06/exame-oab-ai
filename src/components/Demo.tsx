@@ -27,7 +27,7 @@ const Demo = () => {
   };
 
   const handleGoToCheckout = () => {
-    window.location.href = 'https://pay.kirvano.com/0108b276-b048-4524-91c3-2c8ae9b2dbae';
+    window.location.href = 'https://pay.cakto.com.br/78t42ev_686798';
   };
 
   return (
